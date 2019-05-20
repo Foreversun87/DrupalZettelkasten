@@ -1,0 +1,2 @@
+- Die Datei style.scss ist für die Einbindung der einzelnen scss-Dateien zuständig
+- Dort mit @import "[NameVor.scss]" eine neue Abhängigkeit schaffen

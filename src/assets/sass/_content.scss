@@ -1,0 +1,358 @@
+
+
+//Message-Hinweis
+.content-info{
+    background-color: #578bff;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+
+.content{
+    background-color: transparent;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+
+//Front-Page Hintergrund - Hinterste Ebene
+div#main{
+    
+    background-image: url(/images/tree-494799_1280.jpg);
+    .grid-container{
+        
+        padding: 0;
+    }    
+}
+
+
+//NormalePage Hintergrund - Hinterste Ebene
+#page .grid-container{
+    
+    
+    padding: 0;
+    
+}
+
+#block-foreversun-content{
+    padding: 40px;
+    padding-bottom: 10px;
+    background-color: $background-color-w1;
+    min-height: 650px;
+    border-radius: 5px;
+}
+
+
+#main > div > div > cell.medium-12.large-12{
+    top: 5px;
+    margin-top: 5px !important;
+}
+
+
+//Front-PageView
+.b-teaser {
+    
+}
+
+.b-teaser > .text-inner.cell{
+    text-align: center;
+    
+    border: 1px solid black;
+    padding: 25px 0;
+    margin: 30px 0;
+    border-radius: 7px;
+
+    a{
+        
+    }
+}
+
+.views-view-grid.horizontal.cols-2.clearfix > div > .front-view{
+    
+    padding: 20px 0;
+    margin-bottom: 20px;    
+    width: 50%;
+    min-height: 300px;
+}
+
+#icon-comment{
+    margin-right: 7px;
+    float: left;
+}
+
+//=== Anmeldung ===
+
+#login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 800px;
+    background-color: $background-color;
+}
+
+.cell.large-12.anmelden-logo{
+    width: 200px;
+    height: 100px;
+}
+
+#edit-pass.cell.large-12{
+    margin-bottom: 0;
+}
+
+#edit-submit{
+    
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.button:focus, .button:hover {
+    background-color: #0efb0c;    
+    color: #fefefe;
+}
+
+.login.text-center{
+    margin-top: 20px;
+}
+
+// === Pager ===
+
+.pager.grid-x.text-center{
+    list-style: none;
+    
+}
+
+.pager.grid-x.text-center span{
+ font-weight: bold;
+ font-size: 1.5rem;
+}
+
+// === Media-Player ===
+
+#block-mediaplayer{
+    width: 70%;
+    height: 30%;
+}
+
+.responsive-embed.panorama{
+    width: 700px !important;
+    height: 320px !important;
+}
+
+// === Zusammenfassung ===
+
+.zusammenfassung{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.taxonomy{
+    
+
+    div {
+        display: inline;
+        a{
+            margin-right: 5px;
+        }
+    }
+}
+
+// === Card-View ===
+.card{
+    transition: all 1s;
+}
+
+.card-title{
+    margin-bottom: 0px;
+    text-decoration: underline;
+}
+
+.card-title a {
+    font-family: Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.card a {
+    color: #ff7c3a;
+}
+
+
+.card-created{
+    margin-bottom: 0.15rem;
+    font-size: 0.75rem;
+}
+
+.card:hover{
+    transform: scale(1.015);
+}
+
+.card a:hover{
+    color: blue;
+}
+
+// === Tree-View ===
+#block-views-block-sidebarchildrenview-block-1{
+    background-color: $background-color-w1;
+
+}
+
+// === KAWA/KAGA/ABC-Listen ===
+
+// === IMG ===
+
+.kawa-image.quickedit-field img{
+    width: 502px;
+}
+
+
+
+// === GROUP-HEADER ===
+.group-header{
+    margin-bottom: 30px;
+}
+
+// === GROUP-LEFT ===
+.ds-2col-stacked > div.group-left{
+    width: 57%;
+    background-color: #ffffff;
+    padding: 10px;
+    
+    border: solid 1px $boder-kawa;
+    border-radius: 5px; 
+    margin-bottom: 15px;
+
+}
+
+// === GROUP-RIGHT ===
+.ds-2col-stacked > div.group-right{
+    width: 42%;
+    background-color: #23211f75;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px $boder-kawa;
+    
+}
+
+.quer-eltern-kategorie-content{
+    
+    margin-left: 7px;
+    margin-right: 7px;
+    
+    p{
+        color: $color-h2;
+        
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 0;
+    }
+    ol li{
+       left: 40px;
+       
+    }
+    ul li{
+       left: 40px;
+       list-style-type: circle;
+    }
+}
+
+.quer-eltern-kategorie-label{
+    
+    text-decoration: underline;
+    color: $color-h2;
+    margin-top: 7px;
+}
+
+blockquote p{
+    font-size: 1.15rem;
+    line-height: 1.75;
+    word-spacing: .1em;
+    letter-spacing: 0;
+    font-style: italic;
+    text-align: justify;
+    background-color: #b98a4294;
+}
+
+.date {
+    margin-bottom: 2.15rem;
+    font-size: .75rem;    
+}
+
+.date.float{
+    float: left;
+    padding-right: 20px;
+}
+
+// === ABC-LISTE ===
+
+#block-foreversun-content .abc-left.group-left{
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.abc-content{
+    background-color: white;
+    
+}
+
+.abc-content div{
+    padding: 10px;
+}
+
+.abc-content-thema{
+    border: solid 1px black;
+    background-color: #333333d1;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-radius: 5px;
+}
+
+.abc-content :nth-child(odd){
+    background-color: #616161;
+    color: $color-h2;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    
+}
+
+.abc-content :nth-child(even){
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.abc-content :first-child{
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.abc-content-elternelement{
+    float:left;
+    margin-right: 20px;
+    div{
+        color: #8c8b8b;
+    }
+    
+}
+
+.abc-content-thema{
+    padding-left: 20px;
+    div{
+        color: #8c8b8b;
+    }
+    
+}
+
+
+// ===hr-footer ===
+.KA-Footer{
+    margin-top: 0;
+}
+
+
+
+

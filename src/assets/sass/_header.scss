@@ -1,0 +1,115 @@
+.toolbar-menu a{
+    font-size: 13px;
+    font-family: "Source Sans Pro", "Lucida Grande", Verdana, sans-serif;
+}
+
+
+
+
+header.nav-bar{
+    
+    background-color: $background-color-main;
+}
+
+// === Logo ===
+#block-foreversun-branding img{
+    height: 55px;
+    width: auto;
+    margin-top: 6.5px;
+    margin-left: 26px;
+}
+
+// === CREATEICON ===
+#block-createicons{
+    margin-top: 22px;
+    margin-left: 20px;
+}
+
+.fa-images:before {
+    font-size: 1.5rem;
+    color: #F44;
+}
+
+.fa-list-ul:before {
+    font-size: 1.5rem;
+    color: #248030;
+}
+
+.fas.fa-scroll:before{
+    font-size: 1.5rem;
+    color: #afa02a;
+}
+
+.teddy{
+    position: absolute;
+    top: -5px;
+    left: 120px;
+    width: 30px;
+    height: auto;
+    
+}
+
+.teddy:hover{
+    
+        width: 45;
+        height: auto;
+    
+}
+
+
+
+
+// === Account-Menü ===
+#block-foreversun-account-menu{
+    margin-left: 28%;
+    margin-top: 15px;
+}
+
+
+.list-account{
+    margin-top: 7px;
+    margin-right: 30px;
+    list-style-type: none;
+    padding-right: 20px;
+    li{
+        a{
+            margin-left: 5px;
+        }
+    }
+}
+
+.fas.fa-user-alt.account{
+    float: left;
+    margin-top: 12px;
+}
+
+
+// === Suchen ===
+#search-block-form{
+    margin-top: 15px;
+    
+        #float{
+            float: left;
+        }
+            #edit-actions{
+                float: right;
+            }   
+}
+
+// === Suchen-Button ===
+button#search-button.js-form-submit.form-submit{
+    background-color: transparent ;
+}
+  
+// === CSS-Geschichte ===
+#superfish-header-gesamtubersicht{
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+
+
+
+
+
+

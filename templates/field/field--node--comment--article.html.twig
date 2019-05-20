@@ -1,0 +1,112 @@
+{#
+/**
+ * @file
+ * Theme override for comment fields.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional title output populated by modules, intended to
+ *   be displayed after the main title tag that appears in the template.
+ * - comments: List of comments rendered through comment.html.twig.
+ * - content_attributes: HTML attributes for the form title.
+ * - comment_form: The 'Add new comment' form.
+ * - comment_display_mode: Is the comments are threaded.
+ * - comment_type: The comment type bundle ID for the comment field.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see template_preprocess_field()
+ * @see comment_preprocess_field()
+ */
+#}
+
+<section{{ attributes }}>
+  {% if comments and not label_hidden %}
+    {{ title_prefix }}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+    {{ title_suffix }}
+  {% endif %}
+
+  {{ comments }}
+
+  {% if comment_form %}
+    <h2{{ content_attributes }}>{{ 'Add new comment'|t }}</h2>
+    {{ comment_form }}
+  {% endif %}
+
+</section>
+
+
+{# Dies ist die komplette Comment-Form
+<section {{ attributes }}>
+  
+  
+
+    <h2 class="title comment-form__title">Add new comment</h2>
+  <form class="comment-comment-form comment-form" data-drupal-selector="comment-form" action="/comment/reply/node/1/comment" method="post" id="comment-form" accept-charset="UTF-8" data-drupal-form-fields="edit-subject-0-value,edit-comment-body-0-value,edit-comment-body-0-format--2,edit-submit,edit-preview">
+<input autocomplete="off" data-drupal-selector="form-qixgs2fieuz3nl6zkvnw-uejg2cnutkat1qjoqmjafw" type="hidden" name="form_build_id" value="form-QIxgS2FieuZ3nL6ZkvNw_UeJG2cnutkaT1qJoQmjAfw">
+<input data-drupal-selector="edit-comment-comment-form-form-token" type="hidden" name="form_token" value="dMw6n-dfCcQtI8Hv-Q2-EVZCOMGty6RUogTvgIBEMpM">
+<input data-drupal-selector="edit-comment-comment-form" type="hidden" name="form_id" value="comment_comment_form">
+<div class="field--type-language field--name-langcode field--widget-language-select js-form-wrapper form-wrapper" data-drupal-selector="edit-langcode-wrapper" id="edit-langcode-wrapper">      
+</div>
+<div class="field--type-string field--name-subject field--widget-string-textfield js-form-wrapper form-wrapper" data-drupal-selector="edit-subject-wrapper" id="edit-subject-wrapper">      <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-subject-0-value form-item-subject-0-value">
+    <label for="edit-subject-0-value">Subject</label>
+      <input class="js-text-full text-full form-text" data-drupal-selector="edit-subject-0-value" type="text" id="edit-subject-0-value" name="subject[0][value]" value="" size="60" maxlength="64" placeholder="">
+
+      </div>
+
+</div>
+<div class="field--type-text-long field--name-comment-body field--widget-text-textarea js-form-wrapper form-wrapper" data-drupal-selector="edit-comment-body-wrapper" id="edit-comment-body-wrapper">
+          <div class="js-text-format-wrapper text-format-wrapper js-form-item form-item">
+            <div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-comment-body-0-value form-item-comment-body-0-value">
+                <label for="edit-comment-body-0-value" class="js-form-required form-required">Comment</label>
+                <div class="form-textarea-wrapper">
+                <textarea class="js-text-full text-full form-textarea required resize-vertical" data-drupal-selector="edit-comment-body-0-value" id="edit-comment-body-0-value" name="comment_body[0][value]" rows="5" cols="60" placeholder="" 
+                    aria-required="true" data-editor-active-text-format="basic_html" style="visibility: hidden; display: none;">
+                </textarea>
+                    <div id="cke_edit-comment-body-0-value" class="cke_1 cke cke_reset cke_chrome cke_editor_edit-comment-body-0-value cke_ltr cke_browser_webkit cke_hidpi" 
+                         dir="ltr" lang="en" role="application" aria-labelledby="cke_edit-comment-body-0-value_arialbl">
+                         <span id="cke_edit-comment-body-0-value_arialbl" class="cke_voice_label">Rich Text Editor, Comment field
+                         </span>
+                         <div class="cke_inner cke_reset" role="presentation"><span id="cke_1_top" class="cke_top cke_reset_all" role="presentation" style="height: auto; user-select: none;">
+                             <span id="cke_8" class="cke_voice_label">Editor toolbars
+                                 </span><span id="cke_1_toolbox" class="cke_toolbox" role="group" aria-labelledby="cke_8" onmousedown="return false;"><span id="cke_10" class="cke_toolbar" aria-labelledby="cke_10_label" role="toolbar"><span id="cke_10_label" class="cke_voice_label">Formatting</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_11" class="cke_button cke_button__bold cke_button_off" href="javascript:void('Bold')" title="Bold (Ctrl+B)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_11_label" aria-describedby="cke_11_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(1,event);" onfocus="return CKEDITOR.tools.callFunction(2,event);" onclick="CKEDITOR.tools.callFunction(3,this);return false;"><span class="cke_button_icon cke_button__bold_icon" style="background-image:url('http://test.dd:8083/core/assets/vendor/ckeditor/plugins/icons_hidpi.png?t=I8E8');background-position:0 -24px;background-size:16px;">&nbsp;</span><span id="cke_11_label" class="cke_button_label cke_button__bold_label" aria-hidden="false">Bold</span><span id="cke_11_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+B</span></a><a id="cke_12" class="cke_button cke_button__italic cke_button_off" href="javascript:void('Italic')" title="Italic (Ctrl+I)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_12_label" aria-describedby="cke_12_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(4,event);" onfocus="return CKEDITOR.tools.callFunction(5,event);" onclick="CKEDITOR.tools.callFunction(6,this);return false;"><span class="cke_button_icon cke_button__italic_icon" style="background-image:url('http://test.dd:8083/core/assets/vendor/ckeditor/plugins/icons_hidpi.png?t=I8E8');background-position:0 -48px;background-size:16px;">&nbsp;</span><span id="cke_12_label" class="cke_button_label cke_button__italic_label" aria-hidden="false">Italic</span><span id="cke_12_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+I</span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_13" class="cke_toolbar" aria-labelledby="cke_13_label" role="toolbar"><span id="cke_13_label" class="cke_voice_label">Linking</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_14" class="cke_button cke_button__drupallink cke_button_off" href="javascript:void('Link')" title="Link (Ctrl+K)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_14_label" aria-describedby="cke_14_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(7,event);" onfocus="return CKEDITOR.tools.callFunction(8,event);" onclick="CKEDITOR.tools.callFunction(9,this);return false;"><span class="cke_button_icon cke_button__drupallink_icon" style="background-image:url('/core/modules/ckeditor/js/plugins/drupallink/icons/hidpi/drupallink.png?t=0');background-position:0 0px;background-size:16px;">&nbsp;</span><span id="cke_14_label" class="cke_button_label cke_button__drupallink_label" aria-hidden="false">Link</span><span id="cke_14_description" class="cke_button_label" aria-hidden="false">Keyboard shortcut Ctrl+K</span></a><a id="cke_15" class="cke_button cke_button__drupalunlink cke_button_disabled " href="javascript:void('Unlink')" title="Unlink" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_15_label" aria-describedby="cke_15_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(10,event);" onfocus="return CKEDITOR.tools.callFunction(11,event);" onclick="CKEDITOR.tools.callFunction(12,this);return false;"><span class="cke_button_icon cke_button__drupalunlink_icon" style="background-image:url('/core/modules/ckeditor/js/plugins/drupallink/icons/hidpi/drupalunlink.png?t=0');background-position:0 0px;background-size:16px;">&nbsp;</span><span id="cke_15_label" class="cke_button_label cke_button__drupalunlink_label" aria-hidden="false">Unlink</span><span id="cke_15_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_16" class="cke_toolbar" aria-labelledby="cke_16_label" role="toolbar"><span id="cke_16_label" class="cke_voice_label">Lists</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_17" class="cke_button cke_button__bulletedlist cke_button_off" href="javascript:void('Insert/Remove Bulleted List')" title="Insert/Remove Bulleted List" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_17_label" aria-describedby="cke_17_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(13,event);" onfocus="return CKEDITOR.tools.callFunction(14,event);" onclick="CKEDITOR.tools.callFunction(15,this);return false;"><span class="cke_button_icon cke_button__bulletedlist_icon" style="background-image:url('http://test.dd:8083/core/assets/vendor/ckeditor/plugins/icons_hidpi.png?t=I8E8');background-position:0 -624px;background-size:16px;">&nbsp;</span><span id="cke_17_label" class="cke_button_label cke_button__bulletedlist_label" aria-hidden="false">Insert/Remove Bulleted List</span><span id="cke_17_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_18" class="cke_button cke_button__numberedlist cke_button_off" href="javascript:void('Insert/Remove Numbered List')" title="Insert/Remove Numbered List" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_18_label" aria-describedby="cke_18_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(16,event);" onfocus="return CKEDITOR.tools.callFunction(17,event);" onclick="CKEDITOR.tools.callFunction(18,this);return false;"><span class="cke_button_icon cke_button__numberedlist_icon" style="background-image:url('http://test.dd:8083/core/assets/vendor/ckeditor/plugins/icons_hidpi.png?t=I8E8');background-position:0 -672px;background-size:16px;">&nbsp;</span><span id="cke_18_label" class="cke_button_label cke_button__numberedlist_label" aria-hidden="false">Insert/Remove Numbered List</span><span id="cke_18_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_19" class="cke_toolbar" aria-labelledby="cke_19_label" role="toolbar"><span id="cke_19_label" class="cke_voice_label">Media</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_20" class="cke_button cke_button__blockquote cke_button_off" href="javascript:void('Block Quote')" title="Block Quote" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_20_label" aria-describedby="cke_20_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(19,event);" onfocus="return CKEDITOR.tools.callFunction(20,event);" onclick="CKEDITOR.tools.callFunction(21,this);return false;"><span class="cke_button_icon cke_button__blockquote_icon" style="background-image:url('http://test.dd:8083/core/assets/vendor/ckeditor/plugins/icons_hidpi.png?t=I8E8');background-position:0 -168px;background-size:16px;">&nbsp;</span><span id="cke_20_label" class="cke_button_label cke_button__blockquote_label" aria-hidden="false">Block Quote</span><span id="cke_20_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_21" class="cke_button cke_button__drupalimage cke_button_off" href="javascript:void('Image')" title="Image" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_21_label" aria-describedby="cke_21_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(22,event);" onfocus="return CKEDITOR.tools.callFunction(23,event);" onclick="CKEDITOR.tools.callFunction(24,this);return false;"><span class="cke_button_icon cke_button__drupalimage_icon" style="background-image:url('/core/modules/ckeditor/js/plugins/drupalimage/icons/hidpi/drupalimage.png?t=0');background-position:0 0px;background-size:16px;">&nbsp;</span><span id="cke_21_label" class="cke_button_label cke_button__drupalimage_label" aria-hidden="false">Image</span><span id="cke_21_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_22" class="cke_toolbar" aria-labelledby="cke_22_label" role="toolbar"><span id="cke_22_label" class="cke_voice_label">Block Formatting</span><span class="cke_toolbar_start"></span><span id="cke_9" class="cke_combo cke_combo__format cke_combo_off" role="presentation"><span id="cke_9_label" class="cke_combo_label">Format</span><a class="cke_combo_button" title="Paragraph Format" tabindex="-1" href="javascript:void('Paragraph Format')" hidefocus="true" role="button" aria-labelledby="cke_9_label" aria-haspopup="true" onkeydown="return CKEDITOR.tools.callFunction(26,event,this);" onfocus="return CKEDITOR.tools.callFunction(27,event);" onclick="CKEDITOR.tools.callFunction(25,this);return false;"><span id="cke_9_text" class="cke_combo_text cke_combo_inlinelabel">Format</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_23" class="cke_toolbar cke_toolbar_last" aria-labelledby="cke_23_label" role="toolbar"><span id="cke_23_label" class="cke_voice_label">Tools</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_24" class="cke_button cke_button__source cke_button_off" href="javascript:void('Source')" title="Source" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_24_label" aria-describedby="cke_24_description" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(28,event);" onfocus="return CKEDITOR.tools.callFunction(29,event);" onclick="CKEDITOR.tools.callFunction(30,this);return false;"><span class="cke_button_icon cke_button__source_icon" style="background-image:url('http://test.dd:8083/core/assets/vendor/ckeditor/plugins/icons_hidpi.png?t=I8E8');background-position:0 -912px;background-size:16px;">&nbsp;</span><span id="cke_24_label" class="cke_button_label cke_button__source_label" aria-hidden="false">Source</span><span id="cke_24_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span class="cke_toolbar_break"></span></span></span><div id="cke_1_contents" class="cke_contents cke_reset" role="presentation" style="height: 200px;"><span id="cke_29" class="cke_voice_label">Press ALT 0 for help</span><iframe src="" frameborder="0" class="cke_wysiwyg_frame cke_reset" style="width: 100%; height: 100%;" title="Rich Text Editor, Comment field" aria-describedby="cke_29" tabindex="0" allowtransparency="true" data-ss1548283719="1"></iframe></div><span id="cke_1_bottom" class="cke_bottom cke_reset_all" role="presentation" style="user-select: none;"><span id="cke_1_path_label" class="cke_voice_label">Elements path</span><span id="cke_1_path" class="cke_path" role="group" aria-labelledby="cke_1_path_label"><span class="cke_path_empty">&nbsp;</span></span></span></div></div>
+                </div>
+            </div>
+<div class="filter-wrapper js-form-wrapper form-wrapper" data-drupal-selector="edit-comment-body-0-format" id="edit-comment-body-0-format"><div class="filter-help js-form-wrapper form-wrapper" data-drupal-selector="edit-comment-body-0-format-help" id="edit-comment-body-0-format-help"><a href="/filter/tips" target="_blank" data-drupal-selector="edit-comment-body-0-format-help-about" id="edit-comment-body-0-format-help-about">About text formats</a></div>
+<div class="js-form-item form-item js-form-type-select form-type-select js-form-item-comment-body-0-format form-item-comment-body-0-format">
+    <label for="edit-comment-body-0-format--2">Text format</label>
+      <select class="filter-list editor form-select" data-drupal-selector="edit-comment-body-0-format" data-editor-for="edit-comment-body-0-value" id="edit-comment-body-0-format--2" name="comment_body[0][format]"><option value="basic_html" selected="selected">Basic HTML</option><option value="restricted_html">Restricted HTML</option><option value="full_html">Full HTML</option></select>
+      </div>
+<div class="filter-guidelines js-form-wrapper form-wrapper" data-drupal-selector="edit-comment-body-0-format-guidelines" id="edit-comment-body-0-format-guidelines"><div class="filter-guidelines-item filter-guidelines-restricted_html" style="display: none;">
+<h4 class="label" style="display: none;">Restricted HTML</h4>
+
+
+    
+       
+  
+    
+
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Save" class="button button--primary js-form-submit form-submit">
+<input data-drupal-selector="edit-preview" type="submit" id="edit-preview" name="op" value="Preview" class="button js-form-submit form-submit">
+</div>
+
+</form>
+
+
+</section>
+#}

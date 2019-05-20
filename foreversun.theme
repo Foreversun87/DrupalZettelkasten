@@ -1,0 +1,26 @@
+<?php
+
+
+function foreversun_preprocess_html(&$variable){
+  
+}
+
+
+function foreversun_preprocess_input(&$variable){
+    
+    
+}
+
+function foreversun_preprocess_block(&$variable){
+     
+    
+}
+
+/**
+ * Fügt einen eigene Hook-Suggestion hinzu!
+ */ 
+function foreversun_theme_suggestions_alter(array &$suggestions, array $variable, $hook){
+    if($hook == 'page'){
+        $suggestions[] = 'page__foreversun';
+    }
+}

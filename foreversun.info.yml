@@ -1,0 +1,25 @@
+name: ForeversunTheme
+description: ForeversunTheme - Basic Theme for Drupal 8 by PATRICK SCHMIDT
+type: theme
+core: 8.x
+libraries:
+ - foreversun/global-css
+ - foreversun/global-js
+
+ 
+ 
+stylesheets-remove:
+ - core/themes/stable/css/system/components/align.module.css
+
+regions:
+  header: 'Header'
+  subbar: 'Sub Bar'
+  content: 'Main Content'
+  sidebar: 'Sidebar'
+  footer: 'Footer'
+  
+  
+
+
+    
+  

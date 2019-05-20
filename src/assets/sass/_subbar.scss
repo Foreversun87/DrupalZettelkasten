@@ -1,0 +1,85 @@
+#block-mainnavigation{
+    //background-color: $background-color-main;
+    margin-right: 15px;
+    margin-left: 15px;
+    border-bottom: 0.9px dotted black;    
+}
+
+// === Drop-Down-Menü ===
+#superfish-main{
+    
+    
+}
+
+#superfish-main  li{
+    
+    font-weight: 600;
+    font-size: 1.2em;    
+}
+
+#superfish-main > li > a{
+    
+    padding-bottom: 6px;
+    padding-top: 6px;
+    
+}
+
+#superfish-main > li > a:hover{    
+    
+    text-decoration: none;
+}
+
+#superfish-main > li > a.is-active{
+    
+    
+    text-decoration: blink;
+}
+
+#superfish-main > li ul{
+    
+    border: 0;
+}
+
+    // === Dept-Element ===
+#superfish-main > li ul a{
+    
+    padding: 0;
+    padding-left: 10px;
+    text-decoration: none;
+    font-size: 0.7em;
+}
+
+
+
+
+// === Sub-Bar ===
+.sub-bar{
+    border-bottom: 0.009px solid black;
+    background-color: $background-color-subbar;    
+    font-size: 0.8rem;
+    
+}
+
+.sub-bar .grid-container{
+    padding-top: 7px;
+    padding-bottom: 3px;
+    
+}
+
+
+#block-foreversun-breadcrumbs{
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+
+#block-foreversun-breadcrumbs nav ol{
+    margin-bottom: 0px;
+    margin-left: 20px;
+    list-style: none;
+    font-size: 0.7rem;
+    li{
+        float:left;
+        margin-right: 3px;
+    }
+}

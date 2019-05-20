@@ -1,0 +1,2 @@
+partials sind dazu da um diese Elemente in den Page's einzusetzen: 
+z.B. die Datei header.html.twig in page.html.twig einbinden ==> {% include directory ~ '/partials/header.html.twig %}

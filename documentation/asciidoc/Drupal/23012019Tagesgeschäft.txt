@@ -1,0 +1,118 @@
+﻿Matthias:
+$Form und die wunderbare Welt der API#s
+
+Für Thomas:
+JavaScript:
+- Lektion 80 0:00
+- Lektion 81 0:50 - 
+- Lektion 95 4:05 -
+- Lektion 96 1:25 
+- Lektion 97 0:06
+
+
+überlegungen:
+- Wann eine Kategorie, Querverweis angeben?
+- JS-Bibl gezielt verwenden
+- Pax-Header, was ist das, wieso werden meine Images hier hineinkopiert?
+- Wie am besten verlinken?
+- CSS MapGeschichte
+- Zapier ==> mehrere Web-Anwendungen kombinieren
+
+Datenbanken:
+- Die Daten k�nnen auch mit jeden anderen Programmiersprache verwaltet/verarbeitet werden ( Wie Drupal und PHP und JS verwenden? )
+- Wie in Datenbanken weitermachen, 2 Jahre Weinzerl?
+ 
+Grundlage:
+https://usersnap.com/de/blog/webseiten-navigation/
+	
+	Visualisierung:
+	- Google Charts, Timeline, Dygraphs, Chartist, Raw, D3.js, Fusion Charts $, Tableau Public
+	- Python PyDataStack, Panda f�r Analyse, F�r Visualisierung Tableau,  Visualisierung der Graphen Gephi
+
+
+	Struktur:
+	- Navigations-Leiste als Schl�sselelement ==> Stichwort SEO
+
+
+-----------------------------------------Erweiterungen-------------------------------------
+
+- Content Connected: Zeigt die Abh�ngigkeiten einer Entitys an ==> https://vimeo.com/237561774
+- Display Machine Name: Zeigt die Maschinennamen der Felder in Manage form display an ==> https://vimeo.com/231578834
+- Views Parity Row: View Render-Eigenschaften unterschiedlich ausgeben			
+- StyleGuide: Zeigt eine Standard_Ausgabe aller Ausgaben in Maintance=>Reiter
+- Entityqueue: Aus Entiten einen eigenen View erstellen ==> z.B. wie Zettelkasten-Arbeitsplatz
+- Footerma�: Hierarchi-Ausgabe einfach ==> https://vimeo.com/218495248
+- Simple Timeline: Eine Lineare zusammenstellung aus Content wie z.B. ich aus MindMap kenne ==> https://vimeo.com/216542898
+- Bricks: M�chtige Controlle �ber Content ==> https://vimeo.com/211714437
+- Node Class: M�glichkeit dem Content jeweils eigene CSS-Klassen zu geben ==> https://vimeo.com/200708608
+- Views Flipped Table: M�glichkeit Tabellen-Layout anders dazustellen
+- Masonry Views: Gridersatz was an meinen eigenen Cards erinnernt, Responsive
+- Markup: Er f�gt im Beispiel einen Taschenrechner als Feld im COntent ein ==> https://vimeo.com/194360612
+- tota11y: Analysetool f�r CSS auf meiner Homepage ==> https://www.drupal.org/project/tota11y
+- Entity Jump Menu: Direkt zu einem Entity springen
+- Mega-Men�: Als Mega-�bersicht?
+- Webform: Sehr m�chtiges Modul um Formulare zu verwalten inc. Speicherung und Weiterleitung ==> https://www.drupal.org/project/webform
+- Delete all: Eine einfache Methode alle Entitys eines Content-Typen schnell zu löschen https://vimeo.com/300517255
+	
+--------------------------------------------------------------------------------------------
+Wann möchte ich mit 1. Version fertig sein?
+	- 08.03.2019 mit Entwicklung
+	- 08.03 - 10.03 Testen
+	- 09.03.2019 Übergang Produktiv-Einsatz
+	- 10.03 Dokumentation, Fazit, weitere Entwicklung
+
+
+ABC-Listen:
+	- Beziehung und View Überlegen
+	- Designen
+
+
+Gulp �berarbeiten:
+	- �hnliche Struktur wie im BasisSaSSHTML-Tool?
+
+
+View-Layout:
+	-Beschreibung durch Kategorie ersetzen, Sinnvoll �ber Tags?
+	-Contentbereich: 2-1-2 / (Offset 5) :1
+
+Artikel:
+	-Layout eines Artikels gestalten
+	-Paragraphs als dynamische Seitengestaltung
+
+
+Buch sinnvoll?:
+	-Layout eines Buches gestalten									==> Nein, eigenen Arbeitsbereich als Zusammenfassung von Zusammenfassung.
+
+Plan/Werdegang:
+	-In MainNavigation mit aufnehmen 								==> Erledigt
+
+Pagerbereich:
+	-Sinnvoll gestalten										==> Erledigt
+
+Kommentare:
+	-�berlegungen ob mit Forum kombinieren
+	-L�sung w�re evtl. �ber einen View via Link von Artikel aus + Kommentare im Artikel
+	 selber nicht anzuzeigen. Die Kommentar-Form wirkt sehr komplex weshalb wohl eine reine CSS
+	 Ma�nahme sinnvoll sein k�nnte.									==> Werde ich in einer sp�teren Version legen.
+
+Forum:
+	-�berlegungen											==> Werde ich in einer sp�teren Version legen.
+
+Medieninhalte:
+	-F�r Pr�sentationen austesten									==> Erledigt / Pixelgr��e ist wohl wichtig, 
+													ansonsten l�sst sich Breite/Hohe nicht einstellen
+
+Footer:
+	- Impressum
+	- Datenschutz
+	- Kontakt											==> Erledigt
+
+An/Abmelde-Bildschirm:
+	- Designen ==> F�r Login umgesetzt: 	  							==> Reset und Register noch machen
+
+Zusammenfassung:
+	- Fertigdesignen
+	- View umsetzen
+
+Arbeitsbereich:
+	- Umsetzung �berlegen

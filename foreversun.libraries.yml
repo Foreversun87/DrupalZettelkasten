@@ -1,0 +1,25 @@
+global-css:
+    css:
+        theme:
+            dist/assets/css/style.min.css: {}
+            
+
+global-js:
+    js: 
+        dist/assets/js/global.min.js: {}                
+    dependencies:
+        - core/jquery
+
+
+animate_css:
+    css:
+        theme:
+            libs/animate_css/animate.css: {}
+
+
+        
+
+
+        
+        
+   

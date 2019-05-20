@@ -1,0 +1,23 @@
+:stylesheet: asciidoctor.css
+:icons: font
+:toc: left
+:toclevels: 3
+:toc-title: Übersicht
+:numbered:
+
+= Sechs Stufen des Lesens
+Lesen ist eine Tätigkeit, die ganz unterschiedlichen Zwecken dienen kann. Lesen wir einen philosophischen Text, so geht es in erster Linie um zweierlei:
+* um den Inhalt, um Thesen, Positionen und Argumente
+* um die Beurteilung des Inhalts
+
+[quote, Jay F. Rosenberg]
+ Einführungsbuch Philosophieren. Ein Handbuch für Anfänger
+
+.6 Schritte vor wie man lesen kann:
+* Thesen: Welche Thesen vertritt der Autor?
+* Argumente: Mit welchen Argumenten begründet der Autor seine Thesen?
+* Dialektischer Zusammengang: In welchem externen Diskussionszusammenhang stehen diese Thesen und Argumente? Von welchen Fragen und welchen bestehenden Antworten geht   der Autor aus? Wie formuliert er die Fragen? Welche neuen Fragen formuliert er?
+* Beurteilung: sind die Thesen wahr oder zumindest plausibel? Sind die Argumente gut?
+* Entscheidung: Wie ist die vom Autor vorgeschlagene Lösung eines Problems im Diskussionszusammenhang zu beurteilen?
+* Kreative Entwicklung: Wie kann man das Problem zu seinem eigenen machen und eine Lösung formulieren, die über das Bestehende hinausgeht?
+ 

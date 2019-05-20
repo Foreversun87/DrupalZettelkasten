@@ -1,0 +1,123 @@
+/* =======================================================================
+## ++ Globals
+========================================================================== */
+* {
+    box-sizing:border-box;
+    color: black;
+    background-color: transparent;
+      
+}
+
+a{
+    color: #0efb0c;
+}
+
+
+
+p{
+    line-height: 29px;
+    font-size: 18px;
+    font-family: Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+h2{
+   color: $color-h2;
+   font-size: 2.4rem;
+   font-style: oblique; 
+   margin-bottom: 0;
+   font-family: Georgia,serif;
+   font-style: normal;
+   font-weight: 400;
+
+}
+
+.hr-title{
+    margin: 0;
+    margin-bottom: 5px;
+    
+}
+
+.hr-footer{
+    
+}
+
+h2 span{
+    color: $color-h2;
+   font-size: 2.4rem;
+   font-style: oblique; 
+}
+
+ul{
+    list-style: none !important;
+}
+
+li{
+    line-height: 29px;
+    font-size: 18px;
+    font-family: Georgia,serif;
+    font-style: normal;
+    font-weight: 400;
+    position: relative;
+    
+}
+
+
+html{
+    font-size: 100%;
+    background-color: $background-color;
+}
+
+#main{
+    min-height: 660px;
+    
+}
+
+body{
+    -webkit-font-smoothing: antialiased;
+    font-family: sans-serif;
+}
+
+.block{
+    margin-top: 8px;
+    display: block;
+    font-size: 0.5rem;
+}
+
+
+
+.grid-container{
+    max-width: 62.5rem;
+}
+
+.grid-container.full .grid-container{
+    max-width: 62.5rem;
+    
+}
+
+// === Login/Reset/Register ===
+.grid-container.small{
+    max-width: 26rem;
+    
+}
+
+.content.login{
+    background-color: $background-color-main;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.link{
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: blue;
+}
+
+
+
+
+/* =======================================================================
+## ++ Cleafix
+========================================================================== */

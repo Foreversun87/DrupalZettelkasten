@@ -1,0 +1,27 @@
+0. Ins Theme-Verzeichnis wechseln.
+1. NodeJS.org aktuelle Version downloaden und installieren.
+1.1. npm init
+2. Anpassen gulpfile.js: Zeile: const path ...; und die Pfade 
+2.1   npm install -i
+3. npm install -i gulp@3.9.1 ==> gulp 4.0 benötigt anderen Syntax, weshalb dies hier nicht funktioniert!
+4. wenn Error: npm install -i windows-build-tools ==> Fragwürdig, ob wirklich nötig...
+5. npm install -i browser-sync
+6. npm install -i gulp-sass 
+7. gulp --> Ausführen laufen lassen
+
+Anmerkung: Der Node_Modul-Ordner wird durch die Installation von Gulp installiert
+Quelle gulpfile.js: https://github.com/rachy/drupal-gulp-dropin/blob/master/README.md
+-----------------------------------------------------------------------
+----------Gilt für gulpfileSicherung.js (veralteter Versuch)-----------
+-----------------------------------------------------------------------
+Bei Verwendung von Gulp 4 m�ssen folgende �nderungen gefixt werden:
+1. In den Funktionen muss eine done-Callback geschrieben werden;
+	function(done){
+	...
+	done();
+	}
+1.1 Ansonsten kommt Fehlermeldung wegen Asynchronit�t!
+2. Dies muss bei watch, uglify und sass durchgef�hrt werden.
+3. Browseraddon für Livereload ==> https://chrome.google.com/webstore/detail/live-reload/jcejoncdonagmfohjcdgohnmecaipidc/related
+
+

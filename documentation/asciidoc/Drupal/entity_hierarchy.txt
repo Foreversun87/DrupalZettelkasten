@@ -1,0 +1,8 @@
+	
+Ist für die Baumstruktur im Buchmodul - Jedoch ist Fragwürdig ob dies auch ohne geht?
+
+Über Composer installieren im Modul-VZ ( weil Abhängigkeiten bestehen): 
+- composer require "previousnext/nested-set"
+- composer require "drupal/dbal" 	
+
+Module: Entity Hierarchy, Dbal, Workbench Access

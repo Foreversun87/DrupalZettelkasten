@@ -1,0 +1,4 @@
+Um das Debuggen im Chrome-Inspektor zu aktivieren:
+- Die ../sites/default/default.services.yml kopieren in ./services.yml.
+- Öffen von ./services.yml und den Punkt debug: true und cache: false setzen  
+- Cache leeren und fertig

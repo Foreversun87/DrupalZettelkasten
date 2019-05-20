@@ -1,0 +1,35 @@
+.taxoView .views-field.views-field-title .field-content {
+    font-size: 0.7rem;
+
+
+}
+
+.taxoView .views-col{
+    margin: 10px 0;
+}
+
+
+// === SIDEBAR-VIEW ===
+
+#block-views-block-sidebarchildrenview-block-1{
+    padding-right: 50px;
+    padding-left: 50px;
+    
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #292929e8;
+    border: solid 1px black;
+    h2{
+        font-size: 1rem;
+        padding-top: 10px;
+        color: #8e9292;
+        text-decoration: underline;
+    }
+    a{
+        font-size: 0.7rem;
+    }
+}
+
+.sideBarChildrenView-Liststyle{
+    font-size: 0.7rem;
+}

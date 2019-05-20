@@ -1,0 +1,456 @@
+:stylesheet: asciidoctor.css
+:icons: font
+:source-highlighter: highlightjs
+:highlightjsdir: highlight
+:toc: left
+
+:numbered:
+
+
+
+
+= Drupal Tutorial
+Patrick Schmidt
+
+*Wichtige Adressen*:
+====
+https://api.drupal.org/api/drupal => Dokumentation
+
+https://simplytest.me/ => Drupal-Sandbox
+
+====
+
+== Vorbereitungen
+
+=== Acquia
+Um Drupal zu Entwickeln gibt es die Möglichkeit ein Rundum-Sorglos-Paket in Form von Acquia zu installieren.
+Diese Software stellt bereit:
+
+* Web-Server
+* PHPMyAdmin-Server
+* Drush-Console
+* Einfaches erstellen von Backups der Datenbank und Anwendung
+
+NOTE: Download-Link https://dev.acquia.com/downloads[acquia]
+
+=== Drupal Rootverzeichnis
+Um das debuggen der Hooks zu ermöglichen und um den Cache zu deaktivieren, ist folgende Datei in Drupal/sites zu ändern:
+
+video::debugAktivieren.mp4[width=640, height=400]
+
+*Drupal/sites/development.services.yml*:
+
+.development.services.yml
+[source, yml]
+----
+# Local development services.
+#
+# To activate this feature, follow the instructions at the top of the
+# 'example.settings.local.php' file, which sits next to this file.
+parameters:
+  http.response.debug_cacheability_headers: true
+  twig.config:
+    debug: true
+    auto_reload: true
+    cache: false
+services:
+  cache.backend.null:
+    class: Drupal\Core\Cache\NullBackendFactory
+----
+
+NOTE: Ebenfalls empfehlen möchte ich hier https://www.drupal.org/project/devel[Devel-Debugging] welches eine umfassende Analyse von Drupal ermöglicht.
+
+*Drupal/sites/example.settings.local.php*
+
+Die Datei ins Verzeichnis Drupal/sites/default/ kopieren und umbenennen in settings.local.php
+
+
+
+
+
+=== Gulp
+Gulp ist ein Datei-Steaming-Dienst. Mit Gulp lässt sich die Arbeit mit CSS / JS / SASS deutlich vereinfachen:
+
+* Autoreload
+* Autokomplilieren der Dateien, sogar direkt in *.min
+* Kein externer Komplilierer nötig
+* Importieren von JS-Bibliotheken [ über (import jQuery from jQuery) nach Installation über z.B. npm]
+* Struktur von CSS und JS durch Maps
+
+NOTE: Siehe hierzu http://blog2.dd:8083/node/318[Gulp]
+
+
+
+== Theming
+Das Theming ist ein Bereich, den ich erst jetzt richtig realisiere. Jedoch hängen hiermit auch die verwendeten Templates ab. Diese Mechanik muss bewusst sein, wenn man Drupal beherrschen möchte. Dieser Bereich wird zukünftig wohl einen hohen Stellenwert bei mir genießen.
+
+NOTE: https://www.drupal.org/docs/8/theming[Theming]
+
+=== PHP als Backend
+Das BackEnd in Drupal ist in PHP geschrieben. 
+
+NOTE: PHP-Tutorial http://blog2.dd:8083/node/313[PHP]
+
+== Module
+Drupal biete ein reichhaltige Palette an weiterführenden Modulen die einfach in Drupal installiert und aktiviert werden können. Eine andere Möglichkeit besteht, eigene Module zu programmieren welche jedoch PHP-Kenntnisse vorraussetzt.
+
+NOTE: https://www.drupal.org/docs/8/modules[Module]
+
+== Twig
+Twig ist ein PHP-Framework welches von Drupal verwendet wird. https://twig.symfony.com/[Twig]
+
+=== Attribute
+Um zum Beispiel einem Div ein Attribut hinzuzufügen, sollte man dies nicht Hard-Codieren, sondern dem bestehenden Code anhängen. Der Source-Code gibt ein Beispiel.
+
+[source, twig]
+----
+<div {{ attributes.addClass('content-info') }}>
+----
+Die Klasse 'content-info' wird den bestehenden Attributen angehängt.
+
+=== Hook-Suggestion beeinflussen
+Um einen eigenen Hook definieren zu können, folgendes in projectName.theme hinzufügen. 
+Folgendes Beispiel wird zu page ein eigener hook: page__foreversun hinzugefügt.
+
+[#src-listing]
+[source, php]
+----
+
+<?php
+/**
+ * Fügt einen eigene Hook-Suggestion hinzu!
+ */
+function foreversun_theme_suggestions_alter(array &$suggestions, array $variable, $hook){
+    if($hook == 'page'){
+        $suggestions[] = 'page__foreversun';
+    }
+}
+
+----
+
+== Programmierung
+In Drupal kann bei Bedarf und Kenntnisstand alles selbst Programmiert werden. Die folgenden Beispiele habe ich von https://www.youtube.com/channel/UCn0rV2xX-qtbEbCFVSFveww[Drupal_up] 
+
+Dies hier ist reine Backend-Anwendung und setzt PHP-Kenntnisse vorraus. 
+
+Gute Tutorials sind:
+
+* https://www.youtube.com/user/watcAndLearnTuts/featured[watch&learn]
+* https://www.youtube.com/channel/UCn0rV2xX-qtbEbCFVSFveww[Drupal_up]
+* https://www.youtube.com/user/webwashnet[webwash]
+
+
+=== Modul
+In Extend wird das Modul aktiviert. Der Ordner für das custom-Modul wird in \Modules im Drupal-Verzeichnis angelegt und die aufgeführten Dateien dort erstellt und ergänzt. 
+
+==== Modul-Abhängigkeiten fehlerhaft
+Das Modul hilft: https://www.drupal.org/project/module_missing_message_fixer
+
+==== testModul_controller.info.yml
+In dieser Datei werden die Informationen für das Modul angegeben, welche in Drupal in Extend angezeigt werden. 
+[source, yml]
+----
+name: testModul Controller with template
+description: TestModul mit Controller und Template
+type: module
+core: 8.x
+----
+
+
+==== testModul_controller.module
+In dieser Datei wurde der hook_theme() implementiert, welcher bei der Ausgabe im HTML-Dokument ausgegeben wird.
+[source, php]
+----
+<?php
+/**
+ * Implementing hook_theme().
+ */
+function testModul_controller_theme($existing, $type, $theme, $path){    
+    return array(
+        'article_list1' => array(
+            'variables' => array('items' => array(), 'title' => '')
+        )
+    );
+}
+----
+
+
+==== testModul_controller.routing.yml
+Hier werden Informationenstandards wie, wie das Modul erreicht werden kann, angegeben. Z.B. den Pfad, wo befindet sich der Controller, requirements etc.
+[source, yml]
+----
+testModul.article_list:
+  path: '/testModul/articles'
+  defaults:
+    _controller: '\Drupal\testModul_controller\Controller\ArticleController::page'
+    _title: 'Our custom Article list'
+  requirements:
+    _permission: 'access content'
+----
+
+
+==== testModul_controller/src/Controller/ArticleController.php
+
+[source, php]
+----
+<?php
+
+namespace Drupal\testModul_controller\Controller;
+
+class ArticleController{
+    
+    //Rendering of our Controller
+    public function page(){
+
+        $items = array(
+            array('content' => 'Article one'),
+            array('content' => 'Article two'),
+            array('content' => 'Article three'),
+            array('content' => 'Article four'),
+        );
+
+        return array(
+            '#theme' => 'article_list1',
+            '#items' => $items,
+            '#title' => 'Our article list1'
+        );
+    }
+}
+----
+
+
+==== testModul_controller/article-list.html.twig
+Hier wird die Liste ausgegeben und formatiert
+[source, twig]
+----
+<h4>{{ title }}</h4>
+<ul>
+{% for article in items %}
+<li>{{article.content}}</li>
+{% endfor %}
+</ul>
+----
+
+
+=== Form
+In Extend wird die Form aktiviert!
+
+==== testForm.info.yml
+In dieser Datei werden die Informationen für die Form angegeben, welche in Drupal in Extend angezeigt werden. 
+
+[source, yml]
+----
+name: testForm
+description: custom Form 
+type: module
+core: 8.x
+----
+
+==== testForm.routing.yml
+[source, yml]
+----
+testForm.simple_form:
+  path: 'simple-form'
+  defaults:
+    _form: '\Drupal\testForm\Form\SimpleForm'
+    _title: 'Our cool form'
+  requirements:
+    _permission: 'access content'
+----
+==== testForm/src/Form/SimpleForm.php
+[source, php]
+----
+<?php
+
+namespace Drupal\testForm\Form;
+
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Our simple form class
+ */
+class SimpleForm extends FormBase{
+
+    /**
+     * {@inheritdoc} 
+     */
+    public function getFormId(){
+        return 'testForm';
+    }
+
+    /**
+     * {@inheritdoc}
+     * Festlegen des Aufbaues des Formulares 
+     */
+    public function buildForm(array $form, FormStateInterface $form_state){
+        //Feld 1
+        $form['number_1'] = [
+            '#type' => 'textfield',
+            '#title' => $this->t('first number'),
+        ];
+        //Feld 2
+        $form['number_2'] = [
+            '#type' => 'textfield',
+            '#title' => $this->t('second number'),
+        ];
+        //Button zum Berechnen des Ergebnisses
+        $form['submit'] = [
+            '#type' => 'submit',
+            '#value' => $this->t('Calculate'),
+        ];
+        //Form wird zurück
+        return $form;
+    }
+
+     /**
+     * {@inheritdoc} 
+     */
+    public function submitForm(array &$form, FormStateInterface $form_state){
+        //* Message Ausgabe des Ergebnisses in der Drupal Webseite, 
+        //* wenn der Block Messages aktiv ist!
+        drupal_set_message($form_state->getValue('number_1') + $form_state->getValue('number_2'));
+    }
+}
+----
+
+==== Form-Validierung
+Mit der folgenden Funktion kann eine Validierungs-Logik implementiert werden:
+[source, php]
+----
+public function validateForm(array &$form, FormStateInterface $form_state){
+        if(strlen($form_state->getValue('name')) < 3){
+            $form_state->setErrorByName(
+                'name',
+                $this->t('your name should be longer than 3 letters in order for me say it')
+            );
+        }
+    }
+----
+
+=== Ajax-Form
+Es besteht die Möglichkeit die customForm mit Ajax-Funktionalität zu erweitern.
+Dazu fügen wir die unten genannten Änderungen einfach mit ein.
+
+==== testForm.rounting.yml
+[source, yml]
+----
+testForm.simple_form:
+  path: 'simple-form'
+  defaults:
+    _form: '\Drupal\testForm\Form\SimpleForm'
+    _title: 'Our cool form'
+  requirements:
+    _permission: 'access content'
+
+testForm.simple_ajax_form:
+  path: 'simple-ajax-form'
+  defaults:
+    _form: '\Drupal\testForm\Form\SimpleAjaxForm'
+    _title: 'Our cool Ajax form'
+  requirements:
+    _permission: 'access content' 
+----
+
+==== testForm/src/Form/SimpleAjaxForm.php
+
+[source, php]
+----
+<?php
+
+namespace Drupal\testForm\Form;
+
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
+
+/**
+ * Our simple form class
+ */
+class SimpleAjaxForm extends FormBase{
+
+    /**
+     * {@inheritdoc} 
+     */
+    public function getFormId(){
+        return 'test_Ajax_Form';
+    }
+
+    /**
+     * {@inheritdoc}
+     * Festlegen des Aufbaues des Formulares 
+     */
+    public function buildForm(array $form, FormStateInterface $form_state){
+        
+        $form['massage'] = [
+            '#type' => 'markup',
+            '#markup' => '<div class="result_message"></div',
+
+        ];
+
+              
+        $form['number_1'] = [
+            '#type' => 'textfield',
+            '#required' => true,
+            '#title' => $this->t('first number'),
+        ];
+
+        $form['number_2'] = [
+            '#type' => 'textfield',
+            '#required' => true,
+            '#title' => $this->t('second number'),
+        ];
+
+        $form['actions'] = [
+            '#type' => 'button',
+            '#value' => $this->t('Calculate'),
+            '#class' => 'searchButton',
+            '#ajax' => [
+                //Greift auf die setMessage()-Methode zu
+                'callback' => '::setMessage',
+            ]
+        ];
+        
+        return $form;
+    }
+
+     /**
+     * {@inheritdoc} 
+     */
+    public function submitForm(array &$form, FormStateInterface $form_state){
+        //Message Ausgabe in der Drupal Webseite
+        
+    }
+
+    // Wird in $form['actions'] verwendet
+    public function setMessage(array &$form, FormStateInterface $form_state){
+        $response = new AjaxResponse();
+
+
+        $response->addCommand(
+            //Was soll geändert werden?
+            new HtmlCommand(
+                //Welche Klasse soll verändert werden
+                '.result_message',
+                //Was soll verändert werden
+                '<div class = "my_top_message">' . $this->t('the result is @result', ['@result' => ($form_state->getValue('number_1') + $form_state->getValue('number_2'))]) . '</div>'
+            )
+        );
+
+        return $response;
+    }
+}
+----
+
+
+
+
+
+
+
+
+
+
+
+
